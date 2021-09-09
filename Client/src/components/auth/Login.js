@@ -64,7 +64,7 @@ class Login extends Component {
         const hasRedirect = redirect.length > 0 && search.includes("redirect=");
         return (
             <div className="container">
-                <h1 className="large text-primary"></h1>
+                <h1 className="large text-primary">Login</h1>
                 <p className="lead"><i className="fas fa-user" style={{marginRight:"2px"}}></i>Sign Into Your Account</p>
                 <div className="form">
                     <Input 

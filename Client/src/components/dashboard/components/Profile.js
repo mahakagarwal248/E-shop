@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from 'react';
+import React, { Component, Fragment } from 'react';
 import { getProfile, createProfile, deleteAccount } from '../../../actions/ProfileActions';
 import {connect} from "react-redux";
 import {withRouter, Link} from "react-router-dom";
