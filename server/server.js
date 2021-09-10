@@ -9,6 +9,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(morgan("dev"));
 connectDB();
+console.log("right")
 
 app.use(express.json({extended: false}));
 
