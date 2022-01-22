@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 //const PORT = process.env.PORT || 5000;
 require("dotenv").config();
-const server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+const server_port = process.env.YOUR_PORT || process.env.PORT || 5000;
 const server_host = process.env.YOUR_HOST || '0.0.0.0';
 
 app.use(cors());
