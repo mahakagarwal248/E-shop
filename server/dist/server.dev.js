@@ -8,12 +8,13 @@ var cors = require("cors");
 
 var morgan = require("morgan");
 
-var connectDB = require("./config/db");
+var connectDB = require("./config/db"); //const PORT = process.env.PORT || 5000;
 
-var PORT = process.env.PORT || 80;
 
 require("dotenv").config();
 
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || '0.0.0.0';
 app.use(cors());
 app.use(morgan("dev"));
 connectDB(); //define routes and api
@@ -30,6 +31,6 @@ app.use("/api/payment", require("./routes/PaymentAPI"));
 app.get("/", function (req, res) {
   res.send("App is up");
 });
-app.listen(PORT, function () {
-  console.log("Server is listening at port ".concat(PORT));
+app.listen(server_port, server_host, function () {
+  console.log("Server is listening ");
 });
