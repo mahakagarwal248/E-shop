@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "postinstall": "npm run start",
     "start": "node server.js",
     "script": "node server.js",
     "server": "node server.js"
