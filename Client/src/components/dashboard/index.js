@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import {logout} from "../../actions/authActions";
 import PropTypes from "prop-types";
-import { Avatar, Image } from 'antd';
+import { Avatar} from 'antd';
 require ("../../dashboard.css");
 
 class Dashboard extends Component{
@@ -214,7 +214,7 @@ class Dashboard extends Component{
                     <footer className="sticky-footer bg-white">
                         <div className="container my-auto">
                             <div className="copyright text-center my-auto">
-                                <span>Copyright &copy; E-Shop {new Date().getFullYear()}</span>
+                                <span>Copyright &copy; GopalaShringar {new Date().getFullYear()}</span>
                             </div>
                         </div>
                     </footer>

@@ -60,12 +60,8 @@ class Register extends Component {
         const{name, email, password} = this.state;
         const newUser={
             name, email, password, role
-        };
-        if(password === this.state.password2){
-            this.props.register(newUser);
-        }else{
-            message.error("Password must match");
-        }
+        };    
+        this.props.register(newUser);
     };
     render() {
         const {name, password, password2, email} = this.state
@@ -109,7 +105,7 @@ class Register extends Component {
                     onChange={this.onChange} 
                     /> 
                 </div>
-                <button className="btn btn-primary" style={{backgroundColor:"#993300"}} onClick={this.onSubmit}>Register</button>
+                <button className="btn btn-primary" onClick={this.onSubmit}>Register</button>
             </div>
         );
     }

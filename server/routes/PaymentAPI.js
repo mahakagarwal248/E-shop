@@ -6,7 +6,7 @@ const Product = require("../models/products");
 const Cart = require("../models/Cart");
 const Payment = require("../models/Payment");
 const stripe = require("stripe")(
-    "sk_test_51JVVAuSGtKmcd8F2rN15lzf2HsriNvVS1EzDvjR734O6kv3pUmGyUOS748lFiLcrrSj49ZYYx9bvvMSDkJ9FcB0Y00iEedEaAB"
+    "pk_test_51JVVAuSGtKmcd8F2Nfgu1DZvq6SXylNJ5LaTXHG9ZB4HUjrRdNXe9yACXeMdDThVbzM1fQd0Ns3MoKRsWQmwhdZI00FanuTF23"
 );
 
 router.post("/", auth, async (req,res)=>{
@@ -29,7 +29,7 @@ router.post("/", auth, async (req,res)=>{
             description: `Payment for the purchase of ${cart.products.length} items from E-Shop`,
         }, async (err, charge)=>{
             if(err){
-                return res.send({status: 400, err })
+                return res.send({status: 400, err });
             }
             if(charge && charge.status === "succeeded"){
                 const authorization={
