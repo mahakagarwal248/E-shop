@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "start": "npm start",
   "scripts": {
     "run-test": "nyc mocha --exit test/**/**/*.test.js",
     "test": "nyc --reporter=lcov npm run run-test",
