@@ -10,8 +10,20 @@ var _require = require("express-validator"),
     check = _require.check,
     validationResult = _require.validationResult;
 
-var Product = require("../models/proucts");
+var _require2 = require("@google-cloud/storage"),
+    Storage = _require2.Storage;
 
+var multer = require("multer");
+
+var Product = require("../models/products");
+
+var memoryStorage = multer.memoryStorage;
+multer = multer({
+  storage: memoryStorage(),
+  limits: {
+    fileSize: 2000 * 1024 * 1024
+  }
+});
 router.post("/", [auth, [check("name", "Name is required").not().isEmpty(), check("description", "Description is required").not().isEmpty(), check("category", "Category is required").not().isEmpty(), check("price", "Price is required").not().isEmpty(), check("quantity", "Quantity is required").not().isEmpty()]], function _callee(req, res) {
   var errors, _req$body, name, description, category, price, brand, quantity, newProduct, product;
 
@@ -137,7 +149,7 @@ router.get("/:id", function _callee3(req, res) {
     }
   }, null, null, [[0, 9]]);
 });
-router.get("/instructors/:id", auth, function _callee4(req, res) {
+router.get("/instructors/:id", function _callee4(req, res) {
   var products;
   return regeneratorRuntime.async(function _callee4$(_context4) {
     while (1) {
@@ -167,5 +179,41 @@ router.get("/instructors/:id", auth, function _callee4(req, res) {
       }
     }
   }, null, null, [[0, 7]]);
+});
+router.post("/upload/thumbnail", auth, multer.single("file"), function _callee5(req, res) {
+  var id, _req$query, productId, multiple;
+
+  return regeneratorRuntime.async(function _callee5$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.prev = 0;
+          id = req.user.id;
+          _req$query = req.query, productId = _req$query.productId, multiple = _req$query.multiple;
+
+          if (req.file) {
+            _context5.next = 6;
+            break;
+          }
+
+          res.status(400).send("No File Uploaded");
+          return _context5.abrupt("return");
+
+        case 6:
+          _context5.next = 12;
+          break;
+
+        case 8:
+          _context5.prev = 8;
+          _context5.t0 = _context5["catch"](0);
+          console.error(_context5.t0.message);
+          res.status(500).send("Server error");
+
+        case 12:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  }, null, null, [[0, 8]]);
 });
 module.exports = router;
