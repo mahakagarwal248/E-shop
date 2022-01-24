@@ -10,9 +10,6 @@ var _require = require("express-validator"),
     check = _require.check,
     validationResult = _require.validationResult;
 
-var _require2 = require("@google-cloud/storage"),
-    Storage = _require2.Storage;
-
 var multer = require("multer");
 
 var Product = require("../models/products");

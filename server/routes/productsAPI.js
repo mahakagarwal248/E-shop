@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/authorization");
 const {check, validationResult} = require("express-validator");
-const {Storage} = require("@google-cloud/storage");
 let multer = require("multer");
 const Product = require("../models/products");
 const memoryStorage = multer.memoryStorage;
