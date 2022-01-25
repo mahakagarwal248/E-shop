@@ -6,6 +6,8 @@ var config = require("./keys");
 
 var db = config.mongoURI;
 
+require("dotenv").config();
+
 var connectDB = function connectDB() {
   return regeneratorRuntime.async(function connectDB$(_context) {
     while (1) {
