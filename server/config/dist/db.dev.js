@@ -2,9 +2,8 @@
 
 var mongoose = require("mongoose");
 
-var config = require("./keys");
+var config = require("./keys"); //const db = config.mongoURI;
 
-var db = config.mongoURI;
 
 require("dotenv").config();
 
@@ -15,7 +14,7 @@ var connectDB = function connectDB() {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return regeneratorRuntime.awrap(mongoose.connect(db, {
+          return regeneratorRuntime.awrap(mongoose.connect(process.env.DB_PROD, {
             useNewUrlParser: true,
             useUnifiedTopology: true //useCreateIndex: true,
             //useFindAndModify: false,
