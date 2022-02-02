@@ -41,8 +41,5 @@
     "include": [
       "**/server/**/*.js"
     ]
-  },
-  "engines": {
-    "node": "14.17.3"
-}
+  }
 }
