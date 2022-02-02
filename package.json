@@ -11,6 +11,7 @@
   "dependencies": {
     "@angular/cli": "^12.1.2",
     "bcryptjs": "^2.4.3",
+    "concurrently": "3.5.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
