@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "cd Client && npm start",
-    "backend": "nodemon server.js",
-    "start": "concurrently \"npm run backend\" \"npm run build\""
+    "start": "node server",
+    "build": "cd Client && npm install && npm run build"
   },
   "author": "mahak",
   "license": "MIT",
