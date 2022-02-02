@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "build": "cd client && npm run build",
+        "install-client": "cd client && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon server.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "author": "mahak",
   "license": "MIT",
@@ -34,8 +38,5 @@
     "url": "https://github.com/missmahi55/E-shop/issues"
   },
   "homepage": "https://github.com/missmahi55/ecommercesite#readme",
-  "description": "",
-  "engines": {
-    "node": "14.17.3"
-}
+  "description": ""
 }
