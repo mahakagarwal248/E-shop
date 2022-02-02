@@ -4,14 +4,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
-    "heroku-postbuild": "cd Client && npm install --only=dev && npm install && npm run build"
+    "start:dev": "nodemon server.js"
   },
   "author": "mahak",
   "license": "MIT",
   "dependencies": {
     "@angular/cli": "^12.1.2",
     "bcryptjs": "^2.4.3",
-    "concurrently": "3.5.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -35,8 +34,5 @@
     "url": "https://github.com/missmahi55/E-shop/issues"
   },
   "homepage": "https://github.com/missmahi55/ecommercesite#readme",
-  "description": "",
-  "engines":{
-    "node":"14.17.3"
-  }
+  "description": ""
 }
