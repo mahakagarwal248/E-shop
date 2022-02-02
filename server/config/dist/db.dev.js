@@ -14,7 +14,7 @@ var connectDB = function connectDB() {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return regeneratorRuntime.awrap(mongoose.connect(process.env.DB_PROD, {
+          return regeneratorRuntime.awrap(mongoose.connect(config.mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true //useCreateIndex: true,
             //useFindAndModify: false,
