@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "start:dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -41,9 +41,5 @@
     "include": [
       "**/server/**/*.js"
     ]
-  },
-  "engines": {
-    "node": "14.17.3"
-}
-
+  }
 }
