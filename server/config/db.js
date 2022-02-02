@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const config = require("./keys");
-//const db = config.mongoURI;
+const db = config.mongoURI;
 require("dotenv").config();
 
 const connectDB = async () =>{
     try{
-        await mongoose.connect(config.mongoURI, {
+        await mongoose.connect(db, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             //useCreateIndex: true,
