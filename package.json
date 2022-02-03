@@ -5,7 +5,7 @@
   "scripts": {
     "client": "cd Client && npm start",
     "backend": "node server.js",
-    "start": "concurrently \"npm run backend\" \"npm run client\""
+    "start": "npm-run-all --parallel backend client"
   },
   "author": "mahak",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
     "prop-types": "^15.7.2",
     "razorpay": "^2.0.6",
     "react": "^17.0.2",
@@ -37,11 +38,11 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
-    "stripe": "^8.174.0",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
     "request": "^2.88.2",
+    "stripe": "^8.174.0",
     "web-vitals": "^1.1.2"
   },
   "devDependencies": {},
@@ -54,7 +55,7 @@
   },
   "homepage": "https://github.com/missmahi55/ecommercesite#readme",
   "description": "",
-  "engines":{
+  "engines": {
     "node": "14.17.3"
   }
 }
