@@ -54,8 +54,5 @@
     "url": "https://github.com/missmahi55/E-shop/issues"
   },
   "homepage": "https://github.com/missmahi55/ecommercesite#readme",
-  "description": "",
-  "engines": {
-    "node": "14.17.3"
-  }
+  "description": ""
 }
