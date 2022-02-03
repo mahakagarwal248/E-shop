@@ -29,7 +29,7 @@ app.use("/api/profile", require("./routes/ProfileAPI"));
 app.use("/api/cart", require("./routes/cartAPI"));
 app.use("/api/payment", require("./routes/PaymentAPI"));
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html')); // relative path
+  res.sendFile(path.resolve(__dirname, '/Client/build/index.html')); // relative path
 });
 app.listen(server_port, server_host, function () {
   console.log("Server is listening ");
