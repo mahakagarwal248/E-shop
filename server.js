@@ -14,7 +14,6 @@ connectDB();
 
 //define routes and api
 app.use(express.json({extended: false}));
-app.use('/', express.static(path.join(__dirname, '/Client/build')));
 
 app.use("/api/users", require("./routes/userAPI"));
 app.use("/api/products", require("./routes/productsAPI"));
@@ -23,9 +22,9 @@ app.use("/api/profile", require("./routes/ProfileAPI"));
 app.use("/api/cart", require("./routes/cartAPI"));
 app.use("/api/payment", require("./routes/PaymentAPI"));
 
-app.get("/", (req, res)=>{
-    res.send("App is up");
-});
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html')) // relative path
+  })
 
 app.listen(server_port, server_host, ()=>{
     console.log(`Server is listening `)
