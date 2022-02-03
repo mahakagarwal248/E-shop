@@ -22,6 +22,13 @@ app.use("/api/profile", require("./routes/ProfileAPI"));
 app.use("/api/cart", require("./routes/cartAPI"));
 app.use("/api/payment", require("./routes/PaymentAPI"));
 
+if(process.env.NODE_ENV === 'production') {
+    // set static folder
+    app.use(express.static('Client/build'));
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'));
+    });
+  }
 app.get("/", (req, res)=>{
     res.send("App is up");
 });
