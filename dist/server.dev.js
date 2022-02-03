@@ -28,14 +28,6 @@ app.use("/api/auth", require("./routes/authAPI"));
 app.use("/api/profile", require("./routes/ProfileAPI"));
 app.use("/api/cart", require("./routes/cartAPI"));
 app.use("/api/payment", require("./routes/PaymentAPI"));
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express["static"]('../client/build'));
-  app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'));
-  });
-}
-
 app.get("/", function (req, res) {
   res.send("App is up");
 });
