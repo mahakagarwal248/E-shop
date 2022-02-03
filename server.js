@@ -22,10 +22,16 @@ app.use("/api/profile", require("./routes/ProfileAPI"));
 app.use("/api/cart", require("./routes/cartAPI"));
 app.use("/api/payment", require("./routes/PaymentAPI"));
 
-app.get("/", (req, res)=>{
-    res.send("App is up");
-});
-
+if (process.env.NODE_ENV === 'production') {
+    // Exprees will serve up production assets
+    app.use(express.static('Client/build'));
+  
+    // Express serve up index.html file if it doesn't recognize route
+    const path = require('path');
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'));
+    });
+  }
 app.listen(server_port, server_host, ()=>{
     console.log(`Server is listening `)
 });
