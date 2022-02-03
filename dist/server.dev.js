@@ -22,7 +22,7 @@ connectDB(); //define routes and api
 app.use(express.json({
   extended: false
 }));
-app.use('/', express["static"](path.join(__dirname, '/client/build')));
+app.use('/', express["static"](path.join(__dirname, '/Client/build')));
 app.use("/api/users", require("./routes/userAPI"));
 app.use("/api/products", require("./routes/productsAPI"));
 app.use("/api/auth", require("./routes/authAPI"));
