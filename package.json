@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "cd Client && npm start",
+    "start": "cd Client && npm start",
     "backend": "nodemon server.js",
-    "start": "concurrently \"npm run backend\" \"npm run build\""
+    "heroku-postbuild": "concurrently \"npm run backend\" \"npm run start\""
   },
   "author": "mahak",
   "license": "MIT",
