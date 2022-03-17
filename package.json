@@ -56,7 +56,7 @@
   "homepage": "https://github.com/missmahi55/ecommercesite#readme",
   "description": "",
   "engines" : { 
-    "npm" : ">=6.14.13",
-    "node" : ">=14.17.3"
+    "npm" : "6.14.13",
+    "node" : "14.17.3"
   }
 }
