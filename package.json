@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "client": "cd Client && npm start",
-    "backend": "node server.js",
-    "start": "npm-run-all --parallel client backend"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build"
   },
   "author": "mahak",
   "license": "MIT",
