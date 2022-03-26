@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode";
 const isDevelopment = window.location.hostname.includes("localhost");
 
 const getServer = ()=>{
-    return isDevelopment ? "http://localhost:5000" : "https://gopalashringarshop.herokuapp.com";
+    return isDevelopment ? "http://localhost:5000" : "";
 };
 
 const decodeUser = ()=>{

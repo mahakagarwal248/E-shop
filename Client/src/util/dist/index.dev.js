@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var isDevelopment = window.location.hostname.includes("localhost");
 
 var getServer = function getServer() {
-  return isDevelopment ? "http://localhost:5000" : "https://gopalashringarshop.herokuapp.com";
+  return isDevelopment ? "http://localhost:5000" : "";
 };
 
 exports.getServer = getServer;
